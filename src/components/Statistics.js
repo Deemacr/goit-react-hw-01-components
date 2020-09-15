@@ -28,6 +28,18 @@ const StatisticalDataItem = styled.li`
 	flex: 1 1 auto;
 	width: 20%;
 	color: #ffffff;
+	height: 40px;
+	padding-left: 10px;
+	padding-right: 10px;
+`;
+
+const StatisticalDataLabel = styled.p`
+	font-size: 12px;
+	margin: 0px;
+`;
+
+const StatisticalDataPercentage = styled.p`
+	margin-top: 0px;
 `;
 
 const Statistics = ({ title, stats }) => {
@@ -40,7 +52,10 @@ const Statistics = ({ title, stats }) => {
 						key={stat.id}
 						style={{ backgroundColor: "#" + randomColor() }}
 					>
-						<p>{stat.label}</p> <p>{stat.percentage}</p>
+						<StatisticalDataLabel>{stat.label}</StatisticalDataLabel>{" "}
+						<StatisticalDataPercentage>
+							{stat.percentage}
+						</StatisticalDataPercentage>
 					</StatisticalDataItem>
 				))}
 			</StatisticalDataContainer>

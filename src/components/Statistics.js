@@ -63,4 +63,13 @@ const Statistics = ({ title, stats }) => {
 	);
 };
 
+Statistics.defaultProps = {
+	title: "Stats Title",
+};
+
+Statistics.propTypes = {
+	title: PropTypes.string,
+	stats: PropTypes.array.isRequired,
+};
+
 export default Statistics;

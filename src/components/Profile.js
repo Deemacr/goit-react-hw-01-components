@@ -79,4 +79,17 @@ const Profile = ({ avatar, name, tag, location, stats }) => {
 	);
 };
 
+Profile.defaultProps = {
+	avatar:
+		"http://img.dummy-image-generator.com/abstract/dummy-50x50-Circus.jpg",
+};
+
+Profile.propTypes = {
+	avatar: PropTypes.string,
+	name: PropTypes.string.isRequired,
+	tag: PropTypes.string.isRequired,
+	location: PropTypes.string.isRequired,
+	stats: PropTypes.object.isRequired,
+};
+
 export default Profile;

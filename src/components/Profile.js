@@ -53,26 +53,26 @@ const StatsQuantity = styled.span`
 
 const Profile = ({ avatar, name, tag, location, stats }) => {
 	return (
-		<CardContainer class="profile">
-			<ProfileContainer class="description">
-				<ProfileImage src={avatar} alt="user avatar" class="avatar" />
-				<ProfileName class="name">{name}</ProfileName>
-				<p class="tag">@{tag}</p>
-				<ProfileLocation class="location">{location}</ProfileLocation>
+		<CardContainer className="profile">
+			<ProfileContainer className="description">
+				<ProfileImage src={avatar} alt="user avatar" className="avatar" />
+				<ProfileName className="name">{name}</ProfileName>
+				<p className="tag">@{tag}</p>
+				<ProfileLocation className="location">{location}</ProfileLocation>
 			</ProfileContainer>
 
-			<StatsContainer class="stats">
+			<StatsContainer className="stats">
 				<StatsItem>
-					<StatsLabel class="label">Followers </StatsLabel>
-					<StatsQuantity class="quantity">{stats.followers}</StatsQuantity>
+					<StatsLabel className="label">Followers </StatsLabel>
+					<StatsQuantity className="quantity">{stats.followers}</StatsQuantity>
 				</StatsItem>
 				<StatsItem>
-					<span class="label">Views </span>
-					<StatsQuantity class="quantity">{stats.views}</StatsQuantity>
+					<span className="label">Views </span>
+					<StatsQuantity className="quantity">{stats.views}</StatsQuantity>
 				</StatsItem>
 				<StatsItem>
-					<span class="label">Likes </span>
-					<StatsQuantity class="quantity">{stats.likes}</StatsQuantity>
+					<span className="label">Likes </span>
+					<StatsQuantity className="quantity">{stats.likes}</StatsQuantity>
 				</StatsItem>
 			</StatsContainer>
 		</CardContainer>

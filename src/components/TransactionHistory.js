@@ -47,7 +47,7 @@ const TransactionAmount = styled.td`
 
 const TransactionHistory = ({ items }) => {
 	return (
-		<TransactionsTableContainer class="transaction-history">
+		<TransactionsTableContainer className="transaction-history">
 			<thead>
 				<tr>
 					<TransactionsTableHead>Type</TransactionsTableHead>

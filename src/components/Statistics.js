@@ -44,9 +44,9 @@ const StatisticalDataPercentage = styled.p`
 
 const Statistics = ({ title, stats }) => {
 	return (
-		<DataContainer class="statistics">
-			<StatisticalTitle class="title">{title}</StatisticalTitle>
-			<StatisticalDataContainer class="stat-list">
+		<DataContainer className="statistics">
+			<StatisticalTitle className="title">{title}</StatisticalTitle>
+			<StatisticalDataContainer className="stat-list">
 				{stats.map((stat) => (
 					<StatisticalDataItem
 						key={stat.id}

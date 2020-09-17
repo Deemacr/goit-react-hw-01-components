@@ -41,22 +41,22 @@ const FriednsListName = styled.p`
 
 const FriendList = ({ friends }) => {
 	return (
-		<FriendsListContainer class="friend-list">
+		<FriendsListContainer className="friend-list">
 			{friends.map((friend) => (
-				<FriendsListItem key={friend.id} class="item">
+				<FriendsListItem key={friend.id} className="item">
 					<FriendsListStatus
-						class="status"
+						className="status"
 						style={{
 							color: friend.isOnline ? "green" : "red",
 						}}
 					></FriendsListStatus>
 					<FriendsListImage
-						class="avatar"
+						className="avatar"
 						src={friend.avatar}
 						alt={friend.name}
 						width="48"
 					/>
-					<FriednsListName class="name">{friend.name}</FriednsListName>
+					<FriednsListName className="name">{friend.name}</FriednsListName>
 				</FriendsListItem>
 			))}
 		</FriendsListContainer>

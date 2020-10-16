@@ -67,9 +67,9 @@ Statistics.defaultProps = {
 	title: "Stats Title",
 };
 
+export default Statistics;
+
 Statistics.propTypes = {
 	title: PropTypes.string,
-	stats: PropTypes.array.isRequired,
+	stats: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
-
-export default Statistics;

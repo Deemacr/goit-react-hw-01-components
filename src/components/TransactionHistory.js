@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import PropTypes, { object } from "prop-types";
 import styled from "styled-components";
 
 const TransactionsTableContainer = styled.table`
@@ -70,7 +70,7 @@ const TransactionHistory = ({ items }) => {
 };
 
 TransactionHistory.propTypes = {
-	items: PropTypes.array.isRequired,
+	items: PropTypes.arrayOf(object).isRequired,
 };
 
 export default TransactionHistory;

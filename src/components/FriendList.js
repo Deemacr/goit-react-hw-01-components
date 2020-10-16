@@ -1,6 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types";
+import PropTypes, { object } from "prop-types";
 import styled from "styled-components";
+import FriendListItem from "./FriendListItem";
 
 const FriendsListContainer = styled.ul`
 	margin: auto;
@@ -11,60 +12,24 @@ const FriendsListContainer = styled.ul`
 	margin-bottom: 20px;
 `;
 
-const FriendsListItem = styled.li`
-	display: flex;
-	align-items: center;
-	margin: auto;
-	max-width: 250px;
-`;
-
-const FriendsListStatus = styled.span`
-	display: inline-block;
-	width: 50px;
-	&::after {
-		content: "\\26AB";
-		font-weight: bolder;
-		display: inline-block;
-		margin-left: -1em;
-		border-radius: 20px;
-	}
-`;
-const FriendsListImage = styled.img`
-	border-radius: 20%;
-	margin-top: 10px;
-	margin-right: 20px;
-`;
-
-const FriednsListName = styled.p`
-	font-weight: bolder;
-`;
-
 const FriendList = ({ friends }) => {
 	return (
 		<FriendsListContainer className="friend-list">
 			{friends.map((friend) => (
-				<FriendsListItem key={friend.id} className="item">
-					<FriendsListStatus
-						className="status"
-						style={{
-							color: friend.isOnline ? "green" : "red",
-						}}
-					></FriendsListStatus>
-					<FriendsListImage
-						className="avatar"
-						src={friend.avatar}
-						alt={friend.name}
-						width="48"
-					/>
-					<FriednsListName className="name">{friend.name}</FriednsListName>
-				</FriendsListItem>
+				<FriendListItem
+					key={friend.id}
+					FriendListItem={friend}
+					className="item"
+				/>
 			))}
 		</FriendsListContainer>
 	);
 };
 
-FriendList.propTypes = {
-	friends: PropTypes.array.isRequired,
-};
-
 export default FriendList;
+
+FriendList.propTypes = {
+	friends: PropTypes.arrayOf(
+		PropTypes.shape({ id: PropTypes.number.isRequired })
+	).isRequired,
+};

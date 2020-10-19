@@ -1,6 +1,7 @@
 import React from "react";
-import PropTypes, { object } from "prop-types";
+import PropTypes from "prop-types";
 import styled from "styled-components";
+import TransactionsItem from "./TransactionsItem";
 
 const TransactionsTableContainer = styled.table`
 	margin: auto;
@@ -25,26 +26,6 @@ const TransactionBody = styled.tbody`
 	color: #83868b;
 `;
 
-const TransactionTr = styled.tr`
-	background-color: #ffffff;
-	&:nth-child(2n) {
-		background-color: #ecf1f4;
-	}
-`;
-
-const TransactionName = styled.td`
-	text-align: left;
-	padding-left: 40px;
-	text-transform: capitalize;
-	border-right: 1px solid #e4e4e4;
-	padding-top: 10px;
-	padding-bottom: 10px;
-`;
-
-const TransactionAmount = styled.td`
-	border-right: 1px solid #e4e4e4;
-`;
-
 const TransactionHistory = ({ items }) => {
 	return (
 		<TransactionsTableContainer className="transaction-history">
@@ -58,19 +39,16 @@ const TransactionHistory = ({ items }) => {
 
 			<TransactionBody>
 				{items.map((item) => (
-					<TransactionTr key={item.id}>
-						<TransactionName>{item.type}</TransactionName>
-						<TransactionAmount>{item.amount}</TransactionAmount>
-						<td>{item.currency}</td>
-					</TransactionTr>
+					<TransactionsItem TransactionsItems={item} key={item.id} />
 				))}
 			</TransactionBody>
 		</TransactionsTableContainer>
 	);
 };
 
-TransactionHistory.propTypes = {
-	items: PropTypes.arrayOf(object).isRequired,
-};
-
 export default TransactionHistory;
+
+TransactionHistory.propTypes = {
+	items: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string.isRequired }))
+		.isRequired,
+};
